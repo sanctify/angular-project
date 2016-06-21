@@ -6,10 +6,23 @@
 
 	var app = express();
 	
+	app.use(function(req, res, next) {
+		console.log('Page requested', req.url);
+		next();
+	});
 
 	app.use(express.static('.'));
 	app.use(serveIndex('.', {icons: true}));
 
+	
+	app.use('/app/*', function(req, res, next) {
+		res.sendFile('./app/index.html', { root: __dirname });
+	});
+	
+	app.use('/dist/*', function(req, res, next) {
+		res.sendFile('./dist/index.html', { root: __dirname });
+	});
+	
 	app.use(function(req, res, next) {
 		console.log('404: Page not Found', req.url);
 		next();
