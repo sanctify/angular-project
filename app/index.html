@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- build:base -->
+		<base href="/app/" />
+		<!-- endbuild -->
+		
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+		<title>Orsys exo</title>
+		<!-- build:css -->
+		<link target="vendors" rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css" />
+		<link target="vendors" rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css" />
+		<link target="app" rel="stylesheet" href="style.css" />
+		<!-- endbuild -->
+	</head>
+	<body ng-app="mainApp">
+		<div class="container-fluid">
+
+			<ors-header></ors-header>
+			<ors-body></ors-body>
+			<ors-footer></ors-footer>
+		</div>
+		<!-- build:js -->
+		<script target="vendors" src="../bower_components/jquery/dist/jquery.js"></script>
+		<script target="vendors" src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script target="vendors" src="../bower_components/angular/angular.js"></script>
+		<script target="vendors" src="../bower_components/angular-route/angular-route.js"></script>
+		<script target="app" src="app.js"></script>
+		<script target="app" src="ors-star/ors-star.js"></script>
+		<!-- endbuild -->
+	</body>
+</html>
