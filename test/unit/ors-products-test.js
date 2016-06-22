@@ -19,8 +19,10 @@
 				$scope = $rootScope.$new();
 				$controller('ors-products.Ctrl', {$scope: $scope});
 				
-				var h = $http.when('GET', '../ws/releve.csv');
-				h.respond('');
+				$http.when('GET', '../ws/releve.csv').respond('Libellé;date;debit;credit\n' + 
+'Paire de Chaussettes;12/04/2016;10.00;\n' + 
+'Salaire;13/04/2016;;1512.45\n' + 
+'Four à MO;14/04/2016;514.00;');
 			}]));
 		
 			it('should show correctly the csv file', function() {
