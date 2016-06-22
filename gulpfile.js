@@ -1,4 +1,6 @@
 var gulp = require('gulp');
+var Server = require('karma').Server;
+
 var $ = require('gulp-load-plugins')();
 var runSequence = require('run-sequence');
 var del = require('del');
@@ -9,6 +11,16 @@ var open = require('open');
 var getScripts = require('./gulp-get-scripts');
 
 gulp.task('default', ['html', 'data', 'images', 'fonts']);
+
+/**
+ * Run test once and exit
+ */
+gulp.task('test', function (done) {
+  new Server({
+    configFile: __dirname + '/karma.conf.js',
+    singleRun: true
+  }, done).start();
+});
 
 var dist = 'dist';
 var html = ['app/index.html'];

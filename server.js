@@ -15,7 +15,7 @@
 		console.log('req.url wait for 2s', req.url);
 		setTimeout(function() {
 			next();
-		}, 2000);
+		}, 200);
 	});
 
 	app.use(express.static('.'));

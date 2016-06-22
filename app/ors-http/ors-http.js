@@ -15,20 +15,28 @@
 			$rootScope.showSpinner = false;
 			
 			var startSpin = function() {
+				console.log('startSpin', $rootScope.counter);
 				$rootScope.counter++;
-				$timeout(function() {
+				console.log('startSpin after inc', $rootScope.counter);
+				setTimeout(function() {
+					console.log('startSpin tempo', $rootScope.counter);
 					if ($rootScope.counter > 0) {
+						console.log('showSpinner');
 						$rootScope.showSpinner = true;
+						$rootScope.$apply();
 					}
 				}, 500);
 			};
 			
 			var stopSpin = function() {
+				console.log('stopSpin', $rootScope.counter);
 				$rootScope.counter--;
+				console.log('stopSpin after dec', $rootScope.counter);
 				if ($rootScope.counter == 0) {
-						$rootScope.showSpinner = false;
-					}
-			}
+					console.log('showSpinner stop');
+					$rootScope.showSpinner = false;
+				}
+			};
 			
 			return {
 				// optional method
