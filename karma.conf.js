@@ -20,6 +20,8 @@ module.exports = function(config) {
 	  'bower_components/angular/angular.js',
 	  'bower_components/angular-mocks/angular-mocks.js',
 	  'bower_components/papaparse/papaparse.js',
+	  'app/25_protractor/app/*.js',
+	  'app/25_protractor/test/unit/**/*.js'
       'app/**/*.js',
       'test/**/*.js',
 	  { pattern: 'test/mock/**/*.json', watched: true, served: true, included: false }
