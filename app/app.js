@@ -3,7 +3,7 @@
 
 	angular.module('templates', []);
 
-	var app = angular.module('mainApp', ['templates', 'ors-star', 'ngRoute']);
+	var app = angular.module('mainApp', ['templates', 'ors-star', 'ors-products', 'ngRoute']);
 
 	app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
 
@@ -16,7 +16,8 @@
 				templateUrl: 'tmpl/menu/home.html'
 			})
 			.when('/products', {
-				templateUrl: 'tmpl/menu/products.html'
+				templateUrl: 'tmpl/menu/products.html',
+				controller: 'ors-products.Ctrl'
 			})
 			.when('/services', {
 				templateUrl: 'tmpl/menu/services.html'
