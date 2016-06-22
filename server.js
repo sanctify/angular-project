@@ -10,16 +10,23 @@
 		console.log('Page requested', req.url);
 		next();
 	});
+	
+	app.use('/ws/', function(req, res, next) {
+		console.log('req.url wait for 2s', req.url);
+		setTimeout(function() {
+			next();
+		}, 2000);
+	});
 
 	app.use(express.static('.'));
 	app.use(serveIndex('.', {icons: true}));
 
 	
-	app.use('/app/*', function(req, res, next) {
+	app.use('/app/', function(req, res, next) {
 		res.sendFile('./app/index.html', { root: __dirname });
 	});
 	
-	app.use('/dist/*', function(req, res, next) {
+	app.use('/dist/', function(req, res, next) {
 		res.sendFile('./dist/index.html', { root: __dirname });
 	});
 	
